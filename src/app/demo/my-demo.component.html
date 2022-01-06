@@ -1,0 +1,37 @@
+<h1>{{message}}</h1>
+
+
+<sky-toolbar>
+  <sky-toolbar-item>
+    <button class="sky-btn sky-btn-primary"
+    type="button"
+    (click)="onOpenModalClick()"
+    >New</button>
+  </sky-toolbar-item>
+</sky-toolbar>
+
+<sky-dropdown>
+  <sky-dropdown-button>
+    Show dropdown
+  </sky-dropdown-button>
+  <sky-dropdown-menu>
+    <sky-dropdown-item *ngFor="let item of items">
+      <button
+        type="button"
+        [attr.disabled]="item.disabled ? '' : null"
+        (click)="actionClicked(item.name)"
+      >
+        {{ item.name }}
+      </button>
+    </sky-dropdown-item>
+  </sky-dropdown-menu>
+</sky-dropdown>
+
+<ag-grid-angular
+style= "width: 100%; height: 500px;"
+class="ag-theme-balham"
+[columnDefs]="columnDefs"
+[rowData]="rowData"
+></ag-grid-angular>
+
+
