@@ -1,15 +1,12 @@
 import {
   TestBed
 } from '@angular/core/testing';
-
 import {
   SkyAppTestModule
 } from '@skyux-sdk/builder/runtime/testing/browser';
-
 import {
   expect
 } from '@skyux-sdk/testing';
-
 import {
   NewUserComponent
 } from './new-user.component';
@@ -28,12 +25,14 @@ describe('New user component', () => {
     });
   });
 
-  it('should do something', () => {
+  it('should display a title of modal', () => {
     const fixture = TestBed.createComponent(NewUserComponent);
+    const alertEl = fixture.nativeElement.querySelector('p');
 
-    fixture.detectChanges();
+    // Using custom expect matchers
+    expect(alertEl).toBeVisible();
+    expect(alertEl).toHaveText(`Test Modal`);
 
-    expect(true).toBe(false);
   });
 
 });

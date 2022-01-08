@@ -1,5 +1,3 @@
-
-
 import {
   NgModule
 } from '@angular/core';
@@ -28,7 +26,6 @@ import {
   FormsModule
 } from '@angular/forms';
 import { SkyModalModule } from '@skyux/modals';
-
 
 @NgModule({
   exports: [

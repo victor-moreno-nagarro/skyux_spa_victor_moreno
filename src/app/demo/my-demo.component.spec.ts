@@ -28,12 +28,13 @@ describe('My demo component', () => {
     });
   });
 
-  it('should do something', () => {
+  it('test prueba', () => {
     const fixture = TestBed.createComponent(MyDemoComponent);
+    const alertEl = fixture.nativeElement.querySelector('p');
 
-    fixture.detectChanges();
-
-    expect(true).toBe(false);
+    // Using custom expect matchers
+    expect(alertEl).toBeVisible();
+    expect(alertEl).toHaveText(`Prueba Test`);
   });
 
 });

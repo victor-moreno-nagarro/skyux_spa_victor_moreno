@@ -10,11 +10,10 @@ import {
 import { AgGridModule } from 'ag-grid-angular';
 import { SkyToolbarModule } from '@skyux/layout';
 import { FormsModule } from '@angular/forms';
-import { SkyModalModule } from '@skyux/modals';
+import { SkyModalConfiguration, SkyModalHostService, SkyModalInstance, SkyModalModule } from '@skyux/modals';
 import {
   CommonModule
 } from '@angular/common';
-
 
 import {
   SkyDatepickerModule
@@ -32,7 +31,6 @@ import {
 import {
   SkyDropdownModule
 } from '@skyux/popovers';
-
 
 @NgModule({
   imports: [
@@ -56,7 +54,10 @@ import {
     NewUserComponent
   ],
   providers: [
-    SkyThemeService
+    SkyThemeService,
+    SkyModalInstance,
+    SkyModalHostService,
+    SkyModalConfiguration
   ]
 })
 export class AppExtrasModule { }
